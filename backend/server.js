@@ -6,7 +6,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
 
-const PORTA = 3000;
+const PORTA = Number(process.env.PORT) || 3000;
 const RAIZ = path.resolve(__dirname, "..");
 const ARQUIVO = path.join(__dirname, "pedidos.json");
 
@@ -366,11 +366,15 @@ const servidor = http.createServer(async (req, res) => {
         if (req.method !== "GET") {
             const origem = req.headers.origin;
 
-            if (
-                origem &&
-                origem !== "http://127.0.0.1:" + PORTA &&
-                origem !== "http://localhost:" + PORTA
-            ) {
+            
+        if (
+            origem &&
+            origem !== "http://127.0.0.1:" + PORTA &&
+            origem !== "http://localhost:" + PORTA &&
+            origem !== "https://" + req.headers.host &&
+            origem !== "http://" + req.headers.host
+        ) {
+
                 return enviar(res, 403, {
                     erro: "Origem não permitida."
                 });
@@ -654,7 +658,7 @@ const servidor = http.createServer(async (req, res) => {
     }
 });
 
-servidor.listen(PORTA, "127.0.0.1", () => {
+servidor.listen(PORTA, "0.0.0.0", () => {
 
     console.log(
         "Casa do Grão: http://127.0.0.1:" + PORTA
