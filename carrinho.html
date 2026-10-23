@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Carrinho | Casa do Grão</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/carrinho.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <nav class="navegacao container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icone">☕</span>
+                Casa do Grão
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-controls="menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="index.html#sobre">Nossa Essência</a></li>
+                <li><a href="index.html#diferenciais">Diferenciais</a></li>
+            </ul>
+
+            <a href="carrinho.html"
+               class="carrinho-indicador"
+               aria-label="Abrir carrinho">
+                🛍️ <span id="contador-carrinho">0</span>
+            </a>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="carrinho-banner">
+            <div class="container">
+
+                <p class="subtitulo">
+                    SEU MOMENTO ESPECIAL
+                </p>
+
+                <h1>Meu Carrinho</h1>
+
+                <p>
+                    Confira os sabores que escolheu
+                    antes de finalizar seu pedido.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="carrinho-secao">
+
+            <div class="container carrinho-layout">
+
+                <div class="carrinho-produtos">
+
+                    <h2>Produtos selecionados</h2>
+
+                    <div id="lista-carrinho"></div>
+
+                    <div id="carrinho-vazio"
+                         class="carrinho-vazio"
+                         hidden>
+
+                        <p>Seu carrinho está vazio.</p>
+
+                        <a href="cardapio.html"
+                           class="botao botao-principal">
+                            Explorar Cardápio
+                        </a>
+
+                    </div>
+
+                    <a href="cardapio.html"
+                       class="continuar-comprando">
+                        ← Continuar comprando
+                    </a>
+
+                </div>
+
+                <aside class="resumo-pedido">
+
+                    <h2>Resumo do Pedido</h2>
+
+                    <div class="resumo-linha">
+                        <span>Subtotal</span>
+
+                        <strong id="subtotal-carrinho">
+                            R$ 0,00
+                        </strong>
+                    </div>
+
+                    <div class="resumo-linha">
+                        <span>Entrega</span>
+                        <span>A calcular</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="resumo-linha resumo-total">
+                        <span>Subtotal atual</span>
+
+                        <strong id="total-carrinho">
+                            R$ 0,00
+                        </strong>
+                    </div>
+
+                    
+<p class="resumo-aviso">
+    Escolha retirada ou entrega na próxima página.
+    Eventuais taxas de entrega serão confirmadas
+    antes da realização do pedido.
+</p>
+
+
+<button class="botao-finalizar"
+        type="button"
+        onclick="window.location.href='finalizar-pedido.html'">
+    Finalizar pedido
+</button>
+
+                    </button>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Casa do Grão — Seu momento, nosso café.</p>
+    </footer>
+
+</body>
+</html>

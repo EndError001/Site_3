@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio | Casa do Grão</title>
+    <meta name="description" content="Explore o cardápio da Casa do Grão. Cafés especiais, doces e acompanhamentos.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/personalizador.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/cardapio.js" defer></script>
+    <script src="js/personalizador.js" defer></script>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <nav class="navegacao container" aria-label="Navegação principal">
+
+            <a href="index.html#inicio" class="logo">
+                <span class="logo-icone">☕</span>
+                Casa do Grão
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-controls="menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="menu" id="menu">
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="index.html#sobre">Nossa Essência</a></li>
+                <li><a href="index.html#diferenciais">Diferenciais</a></li>
+            </ul>
+
+            
+<a href="carrinho.html"
+   class="carrinho-indicador"
+   aria-label="Abrir carrinho de compras">
+    🛍️ <span id="contador-carrinho">0</span>
+</a>
+
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero-cardapio">
+            <div class="container hero-cardapio-conteudo">
+                <p class="hero-cardapio-subtitulo">SABORES DA CASA</p>
+                <h1>Nosso Cardápio</h1>
+                <p>
+                    Cafés especiais, acompanhamentos artesanais e combinações
+                    feitas para tornar cada momento ainda mais acolhedor.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-cardapio">
+            <div class="container">
+
+                <div class="barra-cardapio">
+                    <div class="campo-busca">
+                        <label for="busca-produto" class="sr-only">Buscar produto</label>
+                        <input type="text"
+                               id="busca-produto"
+                               placeholder="Pesquisar por café, brownie, croissant...">
+                    </div>
+
+                    <div class="filtros-categorias" id="filtros-categorias">
+                        <button class="filtro-btn ativo" type="button" data-categoria="todos">Todos</button>
+                        <button class="filtro-btn" type="button" data-categoria="cafes">Cafés</button>
+                        <button class="filtro-btn" type="button" data-categoria="gelados">Gelados</button>
+                        <button class="filtro-btn" type="button" data-categoria="doces">Doces</button>
+                        <button class="filtro-btn" type="button" data-categoria="salgados">Salgados</button>
+                    </div>
+                </div>
+
+                <div class="resumo-cardapio">
+                    <p>
+                        <strong id="quantidade-produtos">0</strong> produtos encontrados
+                    </p>
+                </div>
+
+                <div class="grid-cardapio" id="grid-cardapio"></div>
+
+                <div class="estado-vazio" id="estado-vazio" hidden>
+                    <h2>Nenhum produto encontrado</h2>
+                    <p>Tente outro nome ou selecione uma categoria diferente.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <p id="mensagem-carrinho"
+       class="mensagem-carrinho"
+       role="status"
+       aria-live="polite"></p>
+
+    <footer class="rodape">
+        <p>Casa do Grão — Seu momento, nosso café.</p>
+    </footer>
+
+</body>
+</html>

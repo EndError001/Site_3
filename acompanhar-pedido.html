@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Acompanhar Pedido | Casa do Grão</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/acompanhamento.js" defer></script>
+
+    <style>
+
+        /* PÁGINA DE ACOMPANHAMENTO */
+
+        .acompanhamento {
+            min-height: 85vh;
+            padding: 90px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #F5EBDD;
+            color: #20150F;
+        }
+
+        .acompanhamento-painel {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 650px;
+            padding: 45px 35px;
+
+            background: #FFFAF2;
+            border: 1px solid #DEC7AA;
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .acompanhamento-etiqueta {
+            color: #A8753C;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .acompanhamento h1 {
+            margin: 15px 0;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(29px, 5vw, 43px);
+        }
+
+        .acompanhamento-descricao {
+            color: #745A46;
+            line-height: 1.7;
+        }
+
+        /* XÍCARA DE CAFÉ ANIMADA */
+
+        .cafe-animado {
+            position: relative;
+
+            width: 180px;
+            height: 180px;
+
+            margin: 35px auto;
+        }
+
+        .fumaca {
+            position: absolute;
+            bottom: 110px;
+
+            width: 12px;
+            height: 55px;
+
+            border-left: 4px solid rgba(
+                139, 85, 41, 0.5
+            );
+
+            border-radius: 50%;
+            opacity: 0;
+
+            animation:
+                subirFumaca 3s infinite ease-out;
+        }
+
+        .fumaca:nth-child(1) {
+            left: 60px;
+        }
+
+        .fumaca:nth-child(2) {
+            left: 90px;
+            animation-delay: 0.8s;
+        }
+
+        .fumaca:nth-child(3) {
+            left: 120px;
+            animation-delay: 1.6s;
+        }
+
+        .xicara {
+            position: absolute;
+
+            bottom: 20px;
+            left: 35px;
+
+            width: 110px;
+            height: 82px;
+
+            background: #A8753C;
+
+            border-radius:
+                8px 8px 45px 45px;
+
+            box-shadow:
+                inset 0 -12px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .xicara::after {
+            content: "";
+
+            position: absolute;
+
+            right: -35px;
+            top: 10px;
+
+            width: 38px;
+            height: 43px;
+
+            border: 12px solid #A8753C;
+            border-radius: 50%;
+        }
+
+        .pires {
+            position: absolute;
+
+            bottom: 8px;
+            left: 18px;
+
+            width: 150px;
+            height: 14px;
+
+            background: #C9A77C;
+            border-radius: 50%;
+        }
+
+        @keyframes subirFumaca {
+
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            35% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-48px);
+            }
+
+        }
+
+        /* ETAPAS DO PEDIDO */
+
+        .etapas-pedido {
+            max-width: 440px;
+
+            margin: 40px auto;
+            padding: 0;
+
+            list-style: none;
+            text-align: left;
+        }
+
+        .etapa {
+            margin-bottom: 20px;
+            padding: 18px 20px;
+
+            background: #F2E6D6;
+
+            border: 1px solid #DEC7AA;
+            border-radius: 12px;
+
+            opacity: 0.55;
+        }
+
+        .etapa.ativa {
+            opacity: 1;
+
+            background: #EAD6B9;
+            border-color: #A8753C;
+        }
+
+        .etapa strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .etapa p {
+            margin-top: 7px;
+
+            color: #745A46;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* AVISO */
+
+        .aviso-acompanhamento {
+            margin: 25px 0;
+            padding: 16px;
+
+            background: #F2E6D6;
+            border-radius: 10px;
+
+            color: #745A46;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* BOTÃO VOLTAR */
+
+        .voltar-cardapio {
+            display: inline-block;
+            padding: 14px 25px;
+
+            color: #FFFFFF;
+            background: #A8753C;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .voltar-cardapio:hover {
+            background: #87572D;
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 480px) {
+
+            .acompanhamento-painel {
+                padding: 35px 20px;
+            }
+
+        }
+
+        /* ACESSIBILIDADE */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .fumaca {
+                animation: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <nav class="navegacao container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icone">☕</span>
+
+                Casa do Grão
+
+            </a>
+
+            <a href="cardapio.html">
+                Cardápio
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="acompanhamento">
+
+            <div class="acompanhamento-painel">
+
+                <!-- IDENTIDADE -->
+
+                <p class="acompanhamento-etiqueta">
+                    CASA DO GRÃO
+                </p>
+
+                <h1>Acompanhe seu pedido</h1>
+
+                <p class="acompanhamento-descricao">
+                    Obrigado por escolher a Casa do Grão!
+                    Acompanhe as próximas etapas
+                    do seu pedido.
+                </p>
+
+                <!-- CAFÉ ANIMADO -->
+
+                <div
+                    class="cafe-animado"
+                    aria-hidden="true">
+
+                    <span class="fumaca"></span>
+                    <span class="fumaca"></span>
+                    <span class="fumaca"></span>
+
+                    <div class="xicara"></div>
+
+                    <div class="pires"></div>
+
+                </div>
+
+                <!-- ETAPAS -->
+
+                <ol class="etapas-pedido">
+
+                    <li
+                        class="etapa ativa"
+                        id="etapa-pagamento">
+
+                        <strong>
+                            1. Aguardando confirmação do Pix
+                        </strong>
+
+                        <p>
+                            A cafeteria precisa conferir
+                            o recebimento do pagamento.
+                        </p>
+
+                    </li>
+
+                    <li
+                        class="etapa"
+                        id="etapa-preparacao">
+
+                        <strong>
+                            2. Seu pedido está sendo preparado
+                        </strong>
+
+                        <p>
+                            Assim que o pagamento for
+                            confirmado e o preparo começar,
+                            esta etapa será ativada.
+                        </p>
+
+                    </li>
+
+                    <li
+                        class="etapa"
+                        id="etapa-pronto">
+
+                        <strong>
+                            3. Pedido pronto!
+                        </strong>
+
+                        <p>
+                            Seu pedido estará disponível
+                            para retirada ou seguirá
+                            para entrega.
+                        </p>
+
+                    </li>
+
+                </ol>
+
+                <!-- INFORMAÇÃO -->
+
+                <p class="aviso-acompanhamento">
+
+                    O acompanhamento ainda está
+                    em desenvolvimento.
+
+                    A confirmação do Pix será
+                    realizada manualmente pela cafeteria.
+
+                    Os estados desta página ainda
+                    não são atualizados automaticamente.
+
+                </p>
+
+                <a
+                    href="cardapio.html"
+                    class="voltar-cardapio">
+
+                    Voltar ao cardápio
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+
+        <p>
+            Casa do Grão — Seu momento, nosso café.
+        </p>
+
+    </footer>
+
+</body>
+</html>

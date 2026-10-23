@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Casa do Grão | Cafeteria Artesanal</title>
+
+    <meta name="description"
+          content="Casa do Grão: cafés especiais e um ambiente acolhedor.">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animacoes.css">
+    <link rel="stylesheet" href="css/personalizador.css">
+
+    <!-- ATIVAR ANIMAÇÕES -->
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+
+    <!-- BIBLIOTECA GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+
+    <!-- ANIMAÇÕES DE TEXTOS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js" defer></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js" defer></script>
+    <script src="js/animacoes.js" defer></script>
+    <script src="js/efeitos-produtos.js" defer></script>
+    <script src="js/personalizador.js" defer></script>
+
+
+<!-- ESTILOS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animacoes.css">
+
+<!-- JAVASCRIPT -->s
+
+<script src="js/efeitos-produtos.js" defer></script>
+
+</head>
+
+
+<body>
+
+    
+<!-- TELA DE CARREGAMENTO -->
+
+<!-- TELA DE CARREGAMENTO -->
+<div class="preloader" id="preloader">
+
+    <!-- VÍDEO OCUPANDO TODO O FUNDO -->
+    <div class="preloader-video-container">
+
+        <video
+            class="preloader-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="assets/imagens/espresso.jpg">
+
+            <source
+                src="assets/videos/cafe-loading.mp4"
+                type="video/mp4">
+
+        </video>
+
+    </div>
+
+    <!-- CONTEÚDO SOBRE O VÍDEO -->
+    <div class="preloader-conteudo">
+
+        <p class="preloader-subtitulo">
+            CAFÉ ARTESANAL
+        </p>
+
+        <h2>Casa do Grão</h2>
+
+        <p class="preloader-frase">
+            Preparando uma experiência especial...
+        </p>
+
+        <!-- BARRA DE CARREGAMENTO -->
+        <div class="preloader-progresso">
+
+            <div
+                class="preloader-barra"
+                id="preloader-progresso"
+                role="progressbar"
+                aria-label="Carregamento"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0">
+
+                <span id="preloader-preenchimento"></span>
+
+            </div>
+
+            <span id="preloader-porcentagem">
+                0%
+            </span>
+
+        </div>
+
+        <button
+            class="preloader-pular"
+            id="pular-abertura"
+            type="button">
+
+            Pular introdução
+
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <nav class="navegacao container" aria-label="Navegação principal">
+
+            <a href="#inicio" class="logo">
+                <span class="logo-icone">☕</span>
+                Casa do Grão
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-controls="menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="menu" id="menu">
+    <li><a href="index.html#inicio">Início</a></li>
+    <li><a href="cardapio.html">Cardápio</a></li>
+    <li><a href="index.html#sobre">Nossa Essência</a></li>
+    <li><a href="index.html#diferenciais">Diferenciais</a></li>
+</ul>
+            </ul>
+
+            
+
+<a href="carrinho.html"
+   class="carrinho-indicador"
+   aria-label="Abrir carrinho de compras">
+    🛍️ <span id="contador-carrinho"> 0 </span>
+</a>
+
+
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- SEÇÃO PRINCIPAL -->
+        <section class="hero" id="inicio">
+
+            
+<img
+    class="hero-imagem"
+    src="assets/imagens/cafeteria.jpg"
+    fetchpriority="high"
+    decoding="async"
+    alt="Interior da Casa do Grão com madeira escura, tijolos aparentes, plantas suspensas e iluminação quente">
+
+
+            <div class="hero-conteudo container">
+
+                <p class="hero-destaque">
+                    CAFÉ ARTESANAL • MOMENTOS ESPECIAIS
+                </p>
+
+                <h1>Um refúgio em cada xícara.</h1>
+
+                <p class="hero-descricao">
+                    Descubra o prazer de desacelerar.
+                    Cafés especiais, sabores artesanais
+                    e um ambiente feito para bons momentos.
+                </p>
+
+                <div class="hero-botoes">
+                    <a href="cardapio.html" class="botao botao-principal">
+                        Ver Cardápio
+                    </a>
+
+                    <a href="#diferenciais" class="botao botao-secundario">
+                        Nossa Essência
+                    </a>
+                </div>
+
+                <p class="hero-servicos">
+                    Café artesanal • Retirada • Entrega
+                </p>
+
+            </div>
+
+            <a href="#sobre" class="seta-rolagem"
+               aria-label="Rolar para a próxima seção">
+                ↓
+            </a>
+
+        </section>
+
+        <!-- BOAS-VINDAS -->
+        <section class="sobre" id="sobre">
+
+            <div class="container sobre-conteudo">
+
+                <p class="subtitulo">SEJA BEM-VINDO</p>
+
+                <h2>
+                    Mais do que café, um lugar
+                    para sentir-se em casa.
+                </h2>
+
+                <p>
+                    Na Casa do Grão, cada detalhe é pensado
+                    para transformar uma simples pausa em
+                    um momento especial.
+                </p>
+
+                <p>
+                    Entre o aroma do café, a madeira
+                    acolhedora e a iluminação suave,
+                    convidamos você a desacelerar.
+                </p>
+
+            </div>
+
+        </section>
+
+
+<!-- EXPERIÊNCIA CINEMATOGRÁFICA -->
+
+<section class="filme-cafeteria">
+
+    <!-- VÍDEO DE FUNDO -->
+    <video
+        class="filme-cafeteria-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/imagens/cafeteria.jpg"
+        aria-hidden="true">
+
+        <source
+            src="assets/videos/cafe-ambiente.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <!-- TEXTO SOBRE O VÍDEO -->
+    <div class="filme-cafeteria-conteudo container">
+
+        <p class="filme-subtitulo">
+            BEM-VINDO À CASA DO GRÃO
+        </p>
+
+        <h2>
+            Mais do que café.<br>
+            Uma experiência.
+        </h2>
+
+        <p>
+            Cada aroma, cada detalhe e cada xícara
+            foram pensados para transformar
+            pequenos momentos em boas lembranças.
+        </p>
+
+        <a href="cardapio.html"
+           class="botao botao-principal">
+            Explore nossos sabores
+        </a>
+
+    </div>
+
+</section>
+
+
+        <!-- DIFERENCIAIS -->
+        <section class="diferenciais" id="diferenciais">
+
+            <div class="container diferenciais-grid">
+
+                <article class="diferencial">
+                    <span class="diferencial-icone">☕</span>
+                    <h3>Cafés Especiais</h3>
+                    <p>Sabores para tornar sua pausa especial.</p>
+                </article>
+
+                <article class="diferencial">
+                    <span class="diferencial-icone">✦</span>
+                    <h3>Ambiente Aconchegante</h3>
+                    <p>Um espaço agradável para bons momentos.</p>
+                </article>
+
+                <article class="diferencial">
+                    <span class="diferencial-icone">♡</span>
+                    <h3>Feito com Carinho</h3>
+                    <p>Cuidado e atenção em cada experiência.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+<!-- NOSSOS FAVORITOS -->
+<section class="favoritos" id="favoritos">
+
+    <div class="container">
+
+        <div class="favoritos-cabecalho">
+            <p class="favoritos-subtitulo">
+                SABORES DA CASA
+            </p>
+
+            <h2>Nossos Favoritos</h2>
+
+            <p>
+                Descubra os sabores que tornam
+                cada pausa ainda mais especial.
+            </p>
+        </div>
+
+        <div class="favoritos-grid">
+
+            <!-- CAPPUCCINO -->
+            <article class="produto-card">
+
+                <div class="produto-foto">
+                    <img src="assets/imagens/cappuccino.png"
+                         alt="Cappuccino em uma xícara"
+                         loading="lazy">
+                </div>
+
+                <div class="produto-info">
+                    <h3>Cappuccino da Casa</h3>
+
+                    <p>
+                        Café espresso com leite
+                        vaporizado e espuma cremosa.
+                    </p>
+
+                    <div class="produto-rodape">
+                        <span class="produto-preco">
+                            R$ 14,90
+                        </span>
+
+                        <button class="adicionar-produto"
+                                data-produto="cappuccino"
+                                type="button">
+                            + Adicionar
+                        </button>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- ESPRESSO -->
+            <article class="produto-card">
+
+                <div class="produto-foto">
+                    <img src="assets/imagens/espresso.png"
+                         alt="Café espresso em xícara pequena"
+                         loading="lazy">
+                </div>
+
+                <div class="produto-info">
+                    <h3>Espresso Especial</h3>
+
+                    <p>
+                        Café intenso e encorpado,
+                        com aroma marcante.
+                    </p>
+
+                    <div class="produto-rodape">
+                        <span class="produto-preco">
+                            R$ 8,90
+                        </span>
+
+                        <button class="adicionar-produto"
+                                data-produto="espresso"
+                                type="button">
+                            + Adicionar
+                        </button>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- CROISSANT -->
+            <article class="produto-card">
+
+                <div class="produto-foto">
+                    <img src="assets/imagens/croissant.png"
+                         alt="Croissant artesanal dourado"
+                         loading="lazy">
+                </div>
+
+                <div class="produto-info">
+                    <h3>Croissant Artesanal</h3>
+
+                    <p>
+                        Massa folhada amanteigada,
+                        leve e crocante.
+                    </p>
+
+                    <div class="produto-rodape">
+                        <span class="produto-preco">
+                            R$ 12,90
+                        </span>
+
+                        <button class="adicionar-produto"
+                                data-produto="croissant"
+                                type="button">
+                            + Adicionar
+                        </button>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- BROWNIE -->
+            <article class="produto-card">
+
+                <div class="produto-foto">
+                    <img src="assets/imagens/brownie.png"
+                         alt="Brownie artesanal de chocolate"
+                         loading="lazy">
+                </div>
+
+                <div class="produto-info">
+                    <h3>Brownie de Chocolate</h3>
+
+                    <p>
+                        Brownie macio com sabor
+                        intenso de chocolate.
+                    </p>
+
+                    <div class="produto-rodape">
+                        <span class="produto-preco">
+                            R$ 13,90
+                        </span>
+
+                        <button class="adicionar-produto"
+                                data-produto="brownie"
+                                type="button">
+                            + Adicionar
+                        </button>
+                    </div>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PERSONALIZADOR DE CAFÉS -->
+
+
+<!-- =====================================
+     PERSONALIZADOR DE CAFÉS
+===================================== -->
+
+<section class="personalizador" id="personalizador">
+
+    <div class="container">
+
+        <!-- TÍTULO DA SEÇÃO -->
+        <div class="personalizador-cabecalho">
+
+            <p class="personalizador-subtitulo">
+                UMA EXPERIÊNCIA ÚNICA
+            </p>
+
+            <h2>Seu café, do seu jeito.</h2>
+
+            <p>
+                Escolha cada detalhe e descubra uma
+                combinação preparada especialmente para você.
+            </p>
+
+        </div>
+
+        <div class="personalizador-layout">
+
+            <!-- FOTOGRAFIA DO CAFÉ -->
+            <div class="personalizador-visual">
+
+                <img
+                    src="assets/imagens/cappuccino-classico.png"
+                    alt="Cappuccino artesanal da Casa do Grão"
+                    loading="lazy">
+
+                <div class="personalizador-nome">
+
+                    <span>FEITO PARA VOCÊ</span>
+
+                    <h3>Cappuccino Clássico</h3>
+
+                    <p>
+                        Espresso intenso, leite cremoso
+                        e um toque artesanal.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- OPÇÕES DE PERSONALIZAÇÃO -->
+            <form
+                class="personalizador-opcoes"
+                id="form-personalizador">
+
+                <h3>Monte seu cappuccino</h3>
+
+                <!-- TAMANHO -->
+                <div class="personalizador-grupo">
+
+                    <label for="cafe-tamanho">
+                        1. Escolha o tamanho
+                    </label>
+
+                    <select
+                        id="cafe-tamanho"
+                        name="tamanho">
+
+                        <option value="pequeno">
+                            Pequeno — R$ 12,90
+                        </option>
+
+                        <option value="medio" selected>
+                            Médio — R$ 14,90
+                        </option>
+
+                        <option value="grande">
+                            Grande — R$ 17,90
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- TIPO DE LEITE -->
+                <div class="personalizador-grupo">
+
+                    <label for="cafe-leite">
+                        2. Escolha o leite
+                    </label>
+
+                    <select
+                        id="cafe-leite"
+                        name="leite">
+
+                        <option value="integral">
+                            Integral — incluso
+                        </option>
+
+                        <option value="desnatado">
+                            Desnatado — incluso
+                        </option>
+
+                        <option value="vegetal">
+                            Vegetal — + R$ 2,50
+                        </option>
+
+                        <option value="zero-lactose">
+                            Zero lactose — + R$ 1,50
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- ADICIONAIS -->
+                <fieldset class="personalizador-adicionais">
+
+                    <legend>3. Personalize ainda mais</legend>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="dose-extra">
+
+                        Dose extra de espresso
+                        (+ R$ 3,50)
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="calda">
+
+                        Calda de chocolate
+                        (+ R$ 2,00)
+                    </label>
+
+                </fieldset>
+
+                <!-- INFORMAÇÕES DE ALERGÊNICOS -->
+                <p class="personalizador-alergenos">
+                    Atenção: bebidas preparadas com leite
+                    zero lactose ainda podem conter
+                    proteínas do leite. Consulte os
+                    ingredientes em caso de alergias.
+                </p>
+
+                <!-- VALOR -->
+                <div class="personalizador-total">
+
+                    <span>Total do café</span>
+
+                    <strong
+                        id="preco-personalizado"
+                        aria-live="polite">
+
+                        R$ 14,90
+
+                    </strong>
+
+                </div>
+
+                <!-- ADICIONAR AO CARRINHO -->
+                <button
+                    type="submit"
+                    class="personalizador-adicionar">
+
+                    Adicionar ao carrinho
+
+                </button>
+
+                <!-- MENSAGEM DE CONFIRMAÇÃO -->
+                <p
+                    id="mensagem-personalizador"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<p id="mensagem-carrinho"
+   class="mensagem-carrinho"
+   role="status"
+   aria-live="polite"></p>
+
+
+    </main>
+
+    <footer class="rodape">
+        <p>Casa do Grão — Seu momento, nosso café.</p>
+    </footer>
+
+</body>
+</html>

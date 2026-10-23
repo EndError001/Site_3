@@ -1,0 +1,459 @@
+
+/* =========================================
+   CASA DO GRÃO
+   FINALIZAÇÃO DO PEDIDO
+========================================= */
+
+/* SEÇÃO PRINCIPAL */
+
+.finalizacao {
+    min-height: 100vh;
+    padding: 85px 0 110px;
+
+    background: #F5EBDD;
+    color: #20150F;
+}
+
+/* CABEÇALHO DA PÁGINA */
+
+.finalizacao-cabecalho {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.finalizacao-subtitulo {
+    margin-bottom: 15px;
+
+    color: #A36A35;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.finalizacao-cabecalho h1 {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.2;
+}
+
+.finalizacao-cabecalho > p:last-child {
+    color: #745A46;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   ORGANIZAÇÃO DA PÁGINA
+========================================= */
+
+.finalizacao-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 35px;
+    align-items: start;
+}
+
+#form-finalizacao {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 0;
+}
+
+/* =========================================
+   PAINÉIS
+========================================= */
+
+.finalizacao-painel {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    padding: 35px;
+
+    background: #FFFAF2;
+    border: 1px solid #DEC7AA;
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgba(49, 30, 17, 0.05);
+}
+
+.finalizacao-painel h2 {
+    color: #2C1C14;
+
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+/* =========================================
+   CAMPOS DO FORMULÁRIO
+========================================= */
+
+.finalizacao-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.finalizacao-campo label,
+.finalizacao-painel > label {
+    color: #473021;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.finalizacao-campo input,
+.finalizacao-campo textarea {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-height: 52px;
+
+    padding: 14px 16px;
+
+    color: #2C1C14;
+    background: #FFFFFF;
+
+    border: 1px solid #CEB79C;
+    border-radius: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.finalizacao-campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.finalizacao-campo input:focus,
+.finalizacao-campo textarea:focus {
+    outline: none;
+
+    border-color: #B78349;
+
+    box-shadow:
+        0 0 0 3px rgba(183, 131, 73, 0.15);
+}
+
+/* =========================================
+   RETIRADA OU ENTREGA
+========================================= */
+
+.finalizacao-recebimento {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+.finalizacao-recebimento legend {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.finalizacao-recebimento label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px;
+
+    color: #473021;
+    background: #F5EBDD;
+
+    border: 1px solid #DEC7AA;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.finalizacao-recebimento input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: #A8753C;
+    cursor: pointer;
+}
+
+/* =========================================
+   ENDEREÇO DE ENTREGA
+========================================= */
+
+.finalizacao-endereco {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    min-width: 0;
+    margin: 10px 0 0;
+    padding: 22px;
+
+    background: #F5EBDD;
+
+    border: 1px solid #DEC7AA;
+    border-radius: 10px;
+}
+
+.finalizacao-endereco legend {
+    padding: 0 8px;
+
+    color: #473021;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* MANTER O ENDEREÇO OCULTO NA RETIRADA */
+
+.finalizacao-endereco[hidden] {
+    display: none;
+}
+
+/* =========================================
+   BOTÃO REVISAR PEDIDO
+========================================= */
+
+.finalizacao-botao {
+    width: 100%;
+    min-height: 60px;
+
+    padding: 16px 24px;
+
+    color: #FFFFFF;
+    background: #A8753C;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.finalizacao-botao:hover:not(:disabled) {
+    background: #87572D;
+}
+
+.finalizacao-botao:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.finalizacao-botao:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+#mensagem-finalizacao {
+    min-height: 1.5em;
+    color: #87572D;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* =========================================
+   RESUMO DO PEDIDO
+========================================= */
+
+.finalizacao-resumo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    min-width: 0;
+    padding: 35px;
+
+    background: #EADAC3;
+
+    border: 1px solid #DEC7AA;
+    border-radius: 16px;
+}
+
+.finalizacao-resumo h2 {
+    color: #2C1C14;
+
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+}
+
+/* LISTA DE PRODUTOS */
+
+#lista-resumo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+#lista-resumo li {
+    padding-bottom: 15px;
+
+    color: #473021;
+    border-bottom: 1px solid #D0B99B;
+
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* TOTAL */
+
+.finalizacao-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #C9AC89;
+}
+
+.finalizacao-total span {
+    color: #473021;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.finalizacao-total strong {
+    color: #8B5529;
+
+    font-size: 25px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* INFORMAÇÕES SOBRE ENTREGA */
+
+.finalizacao-aviso {
+    color: #745A46;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* VOLTAR AO CARRINHO */
+
+.finalizacao-resumo > a {
+    color: #8B5529;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.finalizacao-resumo > a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 950px) {
+
+    .finalizacao-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .finalizacao-resumo {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .finalizacao {
+        padding: 60px 0 80px;
+    }
+
+    .finalizacao-cabecalho {
+        margin-bottom: 35px;
+    }
+
+    .finalizacao-layout {
+        gap: 24px;
+    }
+
+    .finalizacao-painel,
+    .finalizacao-resumo {
+        padding: 25px 20px;
+    }
+
+    .finalizacao-resumo h2 {
+        font-size: 26px;
+    }
+
+    .finalizacao-total strong {
+        font-size: 22px;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .finalizacao-botao,
+    .finalizacao-campo input,
+    .finalizacao-campo textarea {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   TAXA DE ENTREGA
+========================================= */
+
+.finalizacao-linha-frete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    color: #473021;
+    font-size: 15px;
+
+    padding-bottom: 18px;
+    border-bottom: 1px solid #D0B99B;
+}
+
+.finalizacao-linha-frete span {
+    font-weight: 500;
+}
+
+.finalizacao-linha-frete strong {
+    color: #8B5529;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+

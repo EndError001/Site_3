@@ -1,0 +1,180 @@
+
+/* CASA DO GRÃO — ADMINISTRAÇÃO */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F5EBDD;
+    color: #2C1C14;
+    font-family: Arial, sans-serif;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.admin-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 28px 6%;
+    color: #F5EBDD;
+    background: #20150F;
+}
+
+.admin-cabecalho span {
+    color: #C18A48;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.admin-cabecalho h1 {
+    margin: 10px 0 0;
+    font-size: clamp(24px, 3vw, 35px);
+}
+
+.admin-container {
+    width: min(1100px, 92%);
+    margin: 50px auto;
+}
+
+.admin-painel,
+.admin-pedido {
+    padding: 30px;
+    background: #FFFAF2;
+    border: 1px solid #DEC7AA;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .04);
+}
+
+#login-admin {
+    max-width: 440px;
+    margin: 60px auto;
+}
+
+#form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+input {
+    min-height: 48px;
+    padding: 12px;
+    border: 1px solid #CEB79C;
+    border-radius: 8px;
+    font: inherit;
+}
+
+button {
+    min-height: 44px;
+    padding: 12px 20px;
+    color: white;
+    background: #A8753C;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background: #87572D;
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.admin-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.admin-lista {
+    display: grid;
+    gap: 24px;
+}
+
+.admin-pedido h3 {
+    font-size: 23px;
+    margin: 0 0 12px;
+}
+
+.admin-pedido p {
+    line-height: 1.6;
+}
+
+.admin-produtos {
+    margin: 15px 0;
+    padding: 15px;
+    background: #F2E6D6;
+    border-radius: 10px;
+}
+
+.admin-produtos p {
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.admin-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 0;
+    font-weight: 700;
+}
+
+.admin-total strong {
+    color: #8B5529;
+    font-size: 24px;
+}
+
+.admin-status {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 12px 0;
+    background: #EAD6B9;
+    border-radius: 30px;
+    color: #6A4329;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.admin-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+#erro-login {
+    color: #A32E25;
+}
+
+#mensagem-admin {
+    color: #6A4329;
+}
+
+@media (max-width: 600px) {
+    .admin-cabecalho,
+    .admin-titulo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-pedido,
+    .admin-painel {
+        padding: 22px;
+    }
+}

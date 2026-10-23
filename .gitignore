@@ -1,0 +1,15 @@
+
+# Dados dos clientes
+backend/pedidos.json
+backend/pedidos.json.tmp
+
+# Senhas e configurações
+.env
+.env.*
+!.env.example
+
+# Dependências do Node.js
+node_modules/
+
+# Arquivos temporários
+*.log

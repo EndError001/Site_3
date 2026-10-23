@@ -1,0 +1,784 @@
+
+/* =========================================
+   CASA DO GRÃO
+   PERSONALIZADOR DE CAFÉS
+========================================= */
+
+/* SEÇÃO PRINCIPAL */
+
+.personalizador {
+    background: #20150F;
+    color: #F5EBDD;
+    padding: 110px 0;
+}
+
+/* CABEÇALHO */
+
+.personalizador-cabecalho {
+    max-width: 700px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.personalizador-subtitulo {
+    color: #C18A48;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.personalizador-cabecalho h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(34px, 4.5vw, 58px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.personalizador-cabecalho > p:not(.personalizador-subtitulo) {
+    color: #D4BEA1;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ORGANIZAÇÃO EM DUAS COLUNAS */
+
+.personalizador-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 55px;
+    align-items: stretch;
+}
+
+/* =========================================
+   FOTOGRAFIA DO PRODUTO
+========================================= */
+
+.personalizador-visual {
+    position: relative;
+    min-height: 650px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #4A2E1D;
+    isolation: isolate;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.personalizador-visual img {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+/* ESCURECIMENTO NA PARTE INFERIOR */
+
+.personalizador-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 35%,
+        rgba(17, 10, 6, 0.25) 55%,
+        rgba(17, 10, 6, 0.92) 100%
+    );
+
+    pointer-events: none;
+}
+
+/* ZOOM DISCRETO NO COMPUTADOR */
+
+@media (hover: hover) and (pointer: fine) {
+    .personalizador-visual:hover img {
+        transform: scale(1.04);
+    }
+}
+
+/* NOME SOBRE A FOTOGRAFIA */
+
+.personalizador-nome {
+    position: absolute;
+    z-index: 2;
+
+    left: 35px;
+    right: 35px;
+    bottom: 40px;
+}
+
+.personalizador-nome span {
+    color: #E6AC66;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.personalizador-nome h3 {
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 3vw, 40px);
+    margin: 14px 0;
+}
+
+.personalizador-nome p {
+    max-width: 380px;
+    color: #F5EBDD;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   FORMULÁRIO DE PERSONALIZAÇÃO
+========================================= */
+
+.personalizador-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    min-width: 0;
+    padding: 40px;
+
+    background: #2C1C14;
+    border: 1px solid #654832;
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.personalizador-opcoes > h3 {
+    color: #F5EBDD;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(25px, 2.5vw, 33px);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* GRUPOS DE OPÇÕES */
+
+.personalizador-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.personalizador-grupo > label {
+    color: #F5EBDD;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* CAMPOS DE SELEÇÃO */
+
+.personalizador-grupo select {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 16px;
+
+    color: #F5EBDD;
+    background: #38251A;
+
+    border: 1px solid #7A5940;
+    border-radius: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.personalizador-grupo select:hover {
+    border-color: #C18A48;
+    background: #443022;
+}
+
+/* =========================================
+   ADICIONAIS
+========================================= */
+
+.personalizador-adicionais {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    min-width: 0;
+    padding: 22px;
+
+    border: 1px solid #654832;
+    border-radius: 10px;
+}
+
+.personalizador-adicionais legend {
+    color: #F5EBDD;
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 0 8px;
+}
+
+.personalizador-adicionais label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #E9D7B8;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.personalizador-adicionais input {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: #C18A48;
+    cursor: pointer;
+}
+
+/* AVISO DE ALERGÊNICOS */
+
+.personalizador-alergenos {
+    color: #CFB99D;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   PREÇO E COMPRA
+========================================= */
+
+.personalizador-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    border-top: 1px solid #654832;
+
+    margin-top: 5px;
+    padding-top: 25px;
+}
+
+.personalizador-total span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.personalizador-total strong {
+    color: #E6AC66;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(23px, 2.5vw, 32px);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* BOTÃO ADICIONAR AO CARRINHO */
+
+.personalizador-adicionar {
+    width: 100%;
+    min-height: 56px;
+
+    padding: 15px 22px;
+
+    color: #20150F;
+    background: #C18A48;
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.personalizador-adicionar:hover {
+    background: #E0A65E;
+
+    box-shadow:
+        0 8px 25px rgba(193, 138, 72, 0.22);
+}
+
+.personalizador-adicionar:active {
+    transform: scale(0.98);
+}
+
+/* FOCO PARA TECLADO */
+
+.personalizador-opcoes select:focus-visible,
+.personalizador-opcoes input:focus-visible,
+.personalizador-adicionar:focus-visible {
+    outline: 3px solid #E6AC66;
+    outline-offset: 3px;
+}
+
+/* MENSAGEM DE CONFIRMAÇÃO */
+
+#mensagem-personalizador {
+    min-height: 1.5em;
+    color: #D9B980;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+
+    .personalizador-layout {
+        gap: 25px;
+    }
+
+    .personalizador-opcoes {
+        padding: 28px;
+    }
+
+}
+
+/* CELULARES E TABLETS PEQUENOS */
+
+@media (max-width: 800px) {
+
+    .personalizador {
+        padding: 75px 0;
+    }
+
+    .personalizador-cabecalho {
+        margin-bottom: 40px;
+    }
+
+    .personalizador-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .personalizador-visual {
+        min-height: 420px;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+
+    .personalizador {
+        padding: 60px 0;
+    }
+
+    .personalizador-visual {
+        min-height: 350px;
+    }
+
+    .personalizador-nome {
+        left: 22px;
+        right: 22px;
+        bottom: 25px;
+    }
+
+    .personalizador-opcoes {
+        padding: 24px 18px;
+        gap: 20px;
+    }
+
+    .personalizador-adicionais {
+        padding: 18px 14px;
+    }
+
+    .personalizador-total {
+        align-items: flex-start;
+    }
+
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .personalizador-visual img,
+    .personalizador-grupo select,
+    .personalizador-adicionar {
+        transition: none;
+    }
+
+    .personalizador-visual:hover img,
+    .personalizador-adicionar:active {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   PERSONALIZADOR DO CARDÁPIO
+========================================= */
+
+/* JANELA PRINCIPAL */
+
+.modal-personalizador {
+    position: fixed;
+    inset: 0;
+
+    box-sizing: border-box;
+    width: min(92vw, 540px);
+    max-width: 540px;
+    max-height: 88vh;
+    max-height: 88dvh;
+    margin: auto;
+    padding: 0;
+
+    color: #F5EBDD;
+    background: #2C1C14;
+
+    border: 1px solid #79583D;
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 90px rgba(0, 0, 0, 0.55);
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* FUNDO ESCURECIDO */
+
+.modal-personalizador::backdrop {
+    background: rgba(12, 7, 4, 0.82);
+    backdrop-filter: blur(7px);
+}
+
+/* ORGANIZAÇÃO INTERNA */
+
+.modal-personalizador-form {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 38px 34px;
+}
+
+/* BOTÃO FECHAR */
+
+.modal-personalizador-fechar {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    color: #F5EBDD;
+    background: #463024;
+
+    border: 1px solid #79583D;
+    border-radius: 50%;
+
+    font-size: 19px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-personalizador-fechar:hover {
+    background: #65432D;
+    transform: rotate(90deg);
+}
+
+/* ETIQUETA CASA DO GRÃO */
+
+.modal-personalizador-etiqueta {
+    color: #C18A48;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* NOME DA BEBIDA */
+
+.modal-personalizador h2 {
+    padding-right: 30px;
+    margin: 0;
+
+    color: #F5EBDD;
+
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+/* DESCRIÇÃO */
+
+.modal-personalizador-descricao {
+    color: #D4BEA1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* TÍTULOS DOS CAMPOS */
+
+.modal-personalizador-form > label {
+    color: #F5EBDD;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* SELEÇÃO DE TAMANHO E LEITE */
+
+.modal-personalizador select {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 15px;
+
+    color: #F5EBDD;
+    background: #38251A;
+
+    border: 1px solid #79583D;
+    border-radius: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.modal-personalizador select:hover {
+    background: #463024;
+    border-color: #C18A48;
+}
+
+/* ADICIONAIS */
+
+.modal-personalizador fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+
+    border: 1px solid #654832;
+    border-radius: 10px;
+}
+
+.modal-personalizador legend {
+    padding: 0 8px;
+
+    color: #F5EBDD;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-personalizador fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #E9D7B8;
+    font-size: 13px;
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+.modal-personalizador input[type="checkbox"] {
+    flex-shrink: 0;
+
+    width: 18px;
+    height: 18px;
+
+    accent-color: #C18A48;
+    cursor: pointer;
+}
+
+/* VALOR TOTAL */
+
+.modal-personalizador-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-top: 22px;
+    border-top: 1px solid #654832;
+}
+
+.modal-personalizador-total span {
+    color: #F5EBDD;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-personalizador-total strong {
+    color: #E6AC66;
+
+    font-size: 29px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+/* BOTÃO ADICIONAR AO CARRINHO */
+
+.modal-personalizador-adicionar {
+    width: 100%;
+    min-height: 55px;
+    padding: 15px 20px;
+
+    color: #20150F;
+    background: #C18A48;
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-personalizador-adicionar:hover {
+    background: #E6AC66;
+}
+
+.modal-personalizador-adicionar:active {
+    transform: scale(0.98);
+}
+
+/* MENSAGEM DE CONFIRMAÇÃO */
+
+.modal-personalizador-mensagem {
+    min-height: 1.5em;
+
+    color: #E6AC66;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* BOTÃO PERSONALIZAR NO CARDÁPIO */
+
+.cardapio-card .botao-personalizar {
+    display: block;
+
+    width: 100%;
+    min-height: 43px;
+
+    margin-top: 12px;
+    padding: 10px 16px;
+
+    color: #8B5529;
+    background: transparent;
+
+    border: 1px solid #B78349;
+    border-radius: 9px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.cardapio-card .botao-personalizar:hover {
+    color: #FFFFFF;
+    background: #8B5529;
+}
+
+/* ACESSIBILIDADE */
+
+.modal-personalizador button:focus-visible,
+.modal-personalizador select:focus-visible,
+.modal-personalizador input:focus-visible,
+.cardapio-card .botao-personalizar:focus-visible {
+    outline: 3px solid #E6AC66;
+    outline-offset: 3px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+
+    .modal-personalizador {
+        width: 94vw;
+        max-height: 90dvh;
+    }
+
+    .modal-personalizador-form {
+        padding: 32px 20px;
+        gap: 16px;
+    }
+
+    .modal-personalizador h2 {
+        font-size: 26px;
+    }
+
+    .modal-personalizador fieldset {
+        padding: 16px 12px;
+    }
+
+    .modal-personalizador-total strong {
+        font-size: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .modal-personalizador button,
+    .modal-personalizador select,
+    .cardapio-card .botao-personalizar {
+        transition: none;
+    }
+}
+

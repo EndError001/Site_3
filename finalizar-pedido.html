@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar Pedido | Casa do Grão</title>
+
+    <meta name="description"
+          content="Confira e revise seu pedido na Casa do Grão.">
+
+    <!-- FONTES -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ESTILOS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/finalizacao.css">
+    <link rel="stylesheet" href="css/pix-nubank.css">
+    <!-- JAVASCRIPT GLOBAL -->
+
+    <script src="js/main.js" defer></script>
+    <script src="js/finalizacao.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script src="js/pix-nubank.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <nav class="navegacao container"
+             aria-label="Navegação principal">
+
+            <a href="index.html#inicio" class="logo">
+                <span class="logo-icone">☕</span>
+                Casa do Grão
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-controls="menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="menu" id="menu">
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="cardapio.html">Cardápio</a>
+                </li>
+
+                <li>
+                    <a href="carrinho.html">Carrinho</a>
+                </li>
+
+            </ul>
+
+            <a
+                href="carrinho.html"
+                class="carrinho-indicador"
+                aria-label="Abrir carrinho">
+
+                🛍️
+                <span id="contador-carrinho">0</span>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <section class="finalizacao">
+
+            <div class="container">
+
+                <!-- TÍTULO DA PÁGINA -->
+
+                <div class="finalizacao-cabecalho">
+
+                    <p class="finalizacao-subtitulo">
+                        SEU MOMENTO ESTÁ CHEGANDO
+                    </p>
+
+                    <h1>Finalizar pedido</h1>
+
+                    <p>
+                        Confira os detalhes e escolha
+                        como deseja receber seu café.
+                    </p>
+
+                </div>
+
+                <!-- ESTRUTURA PRINCIPAL -->
+
+                <div class="finalizacao-layout">
+
+                    <!-- FORMULÁRIO -->
+
+                    <form id="form-finalizacao">
+
+                        <!-- DADOS DO CLIENTE -->
+
+                        <div class="finalizacao-painel">
+
+                            <h2>Seus dados</h2>
+
+                            <div class="finalizacao-campo">
+
+                                <label for="cliente-nome">
+                                    Nome completo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="cliente-nome"
+                                    name="nome"
+                                    autocomplete="name"
+                                    maxlength="100"
+                                    required>
+
+                            </div>
+
+                            <div class="finalizacao-campo">
+
+                                <label for="cliente-telefone">
+                                    Telefone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="cliente-telefone"
+                                    name="telefone"
+                                    autocomplete="tel"
+                                    placeholder="(00) 00000-0000"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- TIPO DE RECEBIMENTO -->
+
+                        <div class="finalizacao-painel">
+
+                            <fieldset class="finalizacao-recebimento">
+
+                                <legend>
+                                    Como deseja receber?
+                                </legend>
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="recebimento"
+                                        value="retirada"
+                                        checked>
+
+                                    Retirar na cafeteria
+
+                                </label>
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="recebimento"
+                                        value="entrega">
+
+                                    Receber por entrega
+
+                                </label>
+
+                            </fieldset>
+
+                            <!-- ENDEREÇO DE ENTREGA -->
+
+                            <fieldset
+                                id="campos-entrega"
+                                class="finalizacao-endereco"
+                                hidden
+                                disabled>
+
+                                <legend>
+                                    Endereço de entrega
+                                </legend>
+
+                                <div class="finalizacao-campo">
+
+                                    <label for="entrega-rua">
+                                        Rua e número
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="entrega-rua"
+                                        name="rua"
+                                        autocomplete="street-address"
+                                        maxlength="150">
+
+                                </div>
+
+                                <div class="finalizacao-campo">
+
+                                    <label for="entrega-bairro">
+                                        Bairro
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="entrega-bairro"
+                                        name="bairro"
+                                        maxlength="100">
+
+                                </div>
+
+                                <div class="finalizacao-campo">
+
+                                    <label for="entrega-cidade">
+                                        Cidade
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="entrega-cidade"
+                                        name="cidade"
+                                        autocomplete="address-level2"
+                                        maxlength="100">
+
+                                </div>
+
+                                <div class="finalizacao-campo">
+
+                                    <label for="entrega-complemento">
+                                        Complemento (opcional)
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="entrega-complemento"
+                                        name="complemento"
+                                        maxlength="150">
+
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+
+                        <!-- OBSERVAÇÕES -->
+
+                        <div class="finalizacao-painel">
+
+                            <h2>Observações</h2>
+
+                            <div class="finalizacao-campo">
+
+                                <label for="pedido-observacoes">
+                                    Alguma instrução especial?
+                                </label>
+
+                                <textarea
+                                    id="pedido-observacoes"
+                                    name="observacoes"
+                                    rows="4"
+                                    maxlength="500"
+                                    placeholder="Ex.: preferência na preparação do pedido."></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BOTÃO DE FINALIZAÇÃO -->
+
+                        <button
+                            type="submit"
+                            id="botao-finalizar"
+                            class="finalizacao-botao"
+                            disabled>
+
+                            Revisar pedido
+
+                        </button>
+
+                        <p
+                            id="mensagem-finalizacao"
+                            role="status"
+                            aria-live="polite">
+                        </p>
+
+                    </form>
+
+                    <!-- RESUMO DO PEDIDO -->
+
+                    <aside class="finalizacao-resumo">
+
+                        <h2>Resumo do pedido</h2>
+
+                        <ul id="lista-resumo">
+
+                            <li>
+                                O resumo será carregado
+                                na próxima etapa.
+                            </li>
+
+                        </ul>
+
+                        <!-- VALOR TOTAL -->
+
+                        <div class="finalizacao-total">
+
+                            <span>
+                                Total dos produtos
+                            </span>
+
+                            <strong id="total-finalizacao">
+                                R$ 0,00
+                            </strong>
+
+                        </div>
+
+                        <p class="finalizacao-aviso">
+                            A disponibilidade de entrega,
+                            eventuais taxas e o valor final
+                            serão confirmados antes
+                            da realização do pedido.
+                        </p>
+
+                        <a href="carrinho.html">
+                            Voltar ao carrinho
+                        </a>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MENSAGEM GLOBAL DO CARRINHO -->
+
+    <p
+        id="mensagem-carrinho"
+        class="mensagem-carrinho"
+        role="status"
+        aria-live="polite">
+    </p>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <p>
+            Casa do Grão — Seu momento, nosso café.
+        </p>
+
+    </footer>
+
+</body>
+</html>

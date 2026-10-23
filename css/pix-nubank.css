@@ -1,0 +1,109 @@
+
+/* CASA DO GRÃO — PAGAMENTO PIX */
+
+.pagamento-pix {
+    padding: 35px;
+    background: #FFFAF2;
+    border: 1px solid #DEC7AA;
+    border-radius: 16px;
+    color: #2C1C14;
+}
+
+.pagamento-pix[hidden],
+#pix-resultado[hidden] {
+    display: none;
+}
+
+.pagamento-pix h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.pagamento-pix > p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.pix-botao {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    margin: 15px 0;
+    background: #A8753C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 9px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pix-botao:hover:not(:disabled) {
+    background: #87572D;
+}
+
+.pix-botao:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#pix-resultado {
+    margin-top: 25px;
+}
+
+.pix-valor {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.pix-valor strong {
+    color: #8B5529;
+    font-size: 26px;
+}
+
+#pix-qrcode {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: fit-content;
+    max-width: 100%;
+}
+
+#pix-codigo {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    margin-top: 10px;
+    border: 1px solid #CEB79C;
+    border-radius: 9px;
+    background: #FFFFFF;
+    color: #2C1C14;
+    font-family: monospace;
+    overflow-wrap: anywhere;
+}
+
+.pix-aviso {
+    margin-top: 20px;
+    color: #745A46;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+#pix-mensagem {
+    color: #87572D;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .pagamento-pix {
+        padding: 25px 20px;
+    }
+}
